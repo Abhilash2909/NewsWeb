@@ -1,0 +1,37 @@
+/* app.css */
+
+.news-card {
+    max-width: 345px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* Ensure content does not overflow */
+    padding: 10px; /* Add padding to the card */
+}
+
+.news-card img {
+    margin-top: 10px; /* Add margin to the top of the image */
+    width: 100%;
+    object-fit: cover;
+}
+
+.news-card .card-body {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-card .card-title {
+    margin-bottom: 10px; /* Add margin to the bottom of the title */
+}
+
+.news-card .card-text {
+    flex-grow: 1;
+}
+
+.news-card .btn {
+    align-self: flex-end; /* Ensure the button is aligned at the bottom */
+    margin-top: 10px; /* Add margin to the top of the button */
+}

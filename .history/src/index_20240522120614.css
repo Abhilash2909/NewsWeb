@@ -1,0 +1,19 @@
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+  }
+  
+  .navbar {
+    margin-bottom: 20px;
+  }
+  
+  .news-feed {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    margin: 10px;
+  }
+  
