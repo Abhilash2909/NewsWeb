@@ -44,7 +44,8 @@ To start the development server, run the following command:
     npm run dev
     ```
 
-The application will be available at http://localhost:5173.
+The application will be available at 
+http://localhost:5173
 
 ## Contributing
 Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
