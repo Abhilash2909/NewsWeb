@@ -18,7 +18,7 @@ In addition to news browsing, NewsWeb also features dark mode, bookmarking, shar
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/newsweb.git
+    git clone https://github.com/Abhilash2909/newsweb.git
     ```
 2. Navigate to the project directory:
     ```sh
