@@ -1,6 +1,8 @@
 # NewsWeb
 
-NewsWeb is a React-based web application that provides the latest news across various categories such as Trending, Technology, Business, Health, Science, Sports, and Entertainment. It also features dark mode, bookmarking, sharing, and other functionalities to enhance the user experience.
+NewsWeb is a React-based web application that provides the latest news across various categories such as Trending, Technology, Business, Health, Science, Sports, and Entertainment. It utilizes the NewsAPI (https://newsapi.org/) to fetch real-time news data, allowing users to stay updated on current events.
+
+In addition to news browsing, NewsWeb also features dark mode, bookmarking, sharing, and other functionalities to enhance the user experience.
 
 ## Features
 
@@ -29,28 +31,23 @@ NewsWeb is a React-based web application that provides the latest news across va
 
 ## Environment Variables
 
-Create a `.env` file in the root directory and add your API key:
+Create a `.env` file in the root directory and add your NewsAPI key:
 
 ```plaintext
-VITE_API_KEY=your_api_key_here
-Running the Application
-To start the development server:
+NEWS_API_KEY=your_newsapi_key_here
+```
 
-sh
-Copy code
-npm run dev
-The application will be available at http://localhost:3000.
+## Running the Application
 
-Building the Application
-To build the application for production:
+To start the development server, run the following command:
+    ```sh
+    npm run dev
+    ```
 
-sh
-Copy code
-npm run build
-The built application will be available in the dist directory.
+The application will be available at http://localhost:5173.
 
-Contributing
+## Contributing
 Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
 
-License
+## License
 This project is licensed under the MIT License.
