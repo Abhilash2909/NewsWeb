@@ -40,7 +40,7 @@ NEWS_API_KEY=your_newsapi_key_here
 ## Running the Application
 
 To start the development server, run the following command:
-    ```sh
+    ```
     npm run dev
     ```
     
