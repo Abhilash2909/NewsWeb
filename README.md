@@ -48,24 +48,26 @@ The application will be available at
 http://localhost:5173
 
 ## File Structure
-NewsWeb
-├── public
-│   └── index.html
-├── src
-│   ├── assets
-│   │   └── image.jpg
-│   ├── components
-│   │   ├── Navbar.jsx
-│   │   ├── NewsBoard.jsx
-│   │   ├── NewsItem.jsx
-│   ├── App.jsx
-│   ├── index.css
-│   ├── main.jsx
-│   └── App.css
-├── .gitignore
-├── package.json
-├── vite.config.js
-└── README.md
+```sh
+    NewsWeb
+    ├── public
+    │   └── index.html
+    ├── src
+    │   ├── assets
+    │   │   └── image.jpg
+    │   ├── components
+    │   │   ├── Navbar.jsx
+    │   │   ├── NewsBoard.jsx
+    │   │   ├── NewsItem.jsx
+    │   ├── App.jsx
+    │   ├── index.css
+    │   ├── main.jsx
+    │   └── App.css
+    ├── .gitignore
+    ├── package.json
+    ├── vite.config.js
+    └── README.md
+```
 
 ## Contributing
 Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
