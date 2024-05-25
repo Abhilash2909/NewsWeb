@@ -11,7 +11,7 @@ In addition to news browsing, NewsWeb also features dark mode, bookmarking, shar
 - **Bookmarks**: Bookmark your favorite articles.
 - **Share**: Share articles on social media.
 - **Responsive Design**: Works on all devices with a responsive design.
-- **Trending Section**: A dedicated section for trending news.
+- **Trending Section**: A separate section for trending news.
 - **Performance Optimization**: Cached articles for faster load times.
 
 ## Installation
@@ -46,6 +46,26 @@ To start the development server, run the following command:
     
 The application will be available at 
 http://localhost:5173
+
+## File Structure
+NewsWeb
+├── public
+│   └── index.html
+├── src
+│   ├── assets
+│   │   └── image.jpg
+│   ├── components
+│   │   ├── Navbar.jsx
+│   │   ├── NewsBoard.jsx
+│   │   ├── NewsItem.jsx
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   └── App.css
+├── .gitignore
+├── package.json
+├── vite.config.js
+└── README.md
 
 ## Contributing
 Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
