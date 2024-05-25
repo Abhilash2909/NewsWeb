@@ -22,9 +22,9 @@ const NewsBoard = ({ category }) => {
       try {
         let url;
         if (category === "trending") {
-          url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${import.meta.env.NEWS_API_KEY}`;
+          url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${import.meta.env.VITE_API_KEY}`;
         } else {
-          url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${import.meta.env.NEWS_API_KEY}`;
+          url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
         }
         const response = await fetch(url);
         if (!response.ok) {
@@ -36,12 +36,7 @@ const NewsBoard = ({ category }) => {
         // Cache the articles
         localStorage.setItem(`articles-${category}`, JSON.stringify(data.articles));
       } catch (error) {
-        // Check for specific errors and display informative messages
-        if (error.message === 'Network response was not ok') {
-          setError('Failed to fetch news articles. Please check your internet connection and try again later.');
-        } else {
-          setError('An error occurred while fetching news articles. Please try again later.');
-        }
+        setError(error.message);
       } finally {
         setLoading(false);
       }
@@ -55,7 +50,7 @@ const NewsBoard = ({ category }) => {
   }
 
   if (error) {
-    return <div className="text-center">{error}</div>;
+    return <div className="text-center">Error: {error}</div>;
   }
 
   return (

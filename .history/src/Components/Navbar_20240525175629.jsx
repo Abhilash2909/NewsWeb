@@ -9,7 +9,7 @@ const Navbar = ({ setCategory }) => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme={darkMode ? 'light' : 'dark'}>
+    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme={darkMode ? 'dark' : 'light'}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <span className="badge bg-light text-dark fs-6">NewsWeb</span>
@@ -47,7 +47,7 @@ const Navbar = ({ setCategory }) => {
           </ul>
           <form className="d-flex ms-auto">
             <button className="btn btn-dark ms-2" type="button" onClick={handleDarkModeToggle}>
-              {darkMode ? 'Dark Mode' : 'Light Mode'}
+              {darkMode ? 'Light Mode' : 'Dark Mode'}
             </button>
             <a className="btn btn-secondary ms-2" href="#">Contact</a>
             <a className="btn btn-secondary ms-2" href="#">About</a>

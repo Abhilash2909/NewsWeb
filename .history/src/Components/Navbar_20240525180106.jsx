@@ -4,7 +4,7 @@ const Navbar = ({ setCategory }) => {
   const [darkMode, setDarkMode] = useState(true);
 
   const handleDarkModeToggle = () => {
-    setDarkMode(!darkMode);
+    setDarkMode(darkMode);
     document.body.classList.toggle('dark-mode', darkMode);
   };
 
@@ -47,7 +47,7 @@ const Navbar = ({ setCategory }) => {
           </ul>
           <form className="d-flex ms-auto">
             <button className="btn btn-dark ms-2" type="button" onClick={handleDarkModeToggle}>
-              {darkMode ? 'Dark Mode' : 'Light Mode'}
+              {darkMode ? 'Light Mode' : 'Dark Mode'}
             </button>
             <a className="btn btn-secondary ms-2" href="#">Contact</a>
             <a className="btn btn-secondary ms-2" href="#">About</a>

@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import NewsItem from "./NewsItem";
-
 const NewsBoard = ({ category }) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,9 +19,9 @@ const NewsBoard = ({ category }) => {
       try {
         let url;
         if (category === "trending") {
-          url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${import.meta.env.NEWS_API_KEY}`;
+          url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${import.meta.env.VITE_API_KEY}`;
         } else {
-          url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${import.meta.env.NEWS_API_KEY}`;
+          url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
         }
         const response = await fetch(url);
         if (!response.ok) {
