@@ -33,10 +33,10 @@ const NewsBoard = ({ category }) => {
         const data = await response.json();
         setArticles(data.articles);
 
-        // Cache the articles
+        // Caching the articles
         localStorage.setItem(`articles-${category}`, JSON.stringify(data.articles));
       } catch (error) {
-        // Check for specific errors and display informative messages
+        // Check for specific errors and displaying informative messages
         if (error.message === 'Network response was not ok') {
           setError('Failed to fetch news articles. Please check your internet connection and try again later.');
         } else {
