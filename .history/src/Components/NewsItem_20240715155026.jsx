@@ -2,7 +2,13 @@ import image from '../assets/image.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare, faBookmark, faHeart } from '@fortawesome/free-solid-svg-icons';
 
-const NewsItem = ({ title = '', description = '', src = image, url = '#', category = '' }) => {
+function MyComponent({ icon = faStar, size = 'lg' }) {
+  return (
+    <FontAwesomeIcon icon={icon} size={size} {} />
+  );
+}
+
+const NewsItem = ({ title, description, src, url, category }) => {
   const imgHeight = "200px";
 
   return (
@@ -14,6 +20,7 @@ const NewsItem = ({ title = '', description = '', src = image, url = '#', catego
         alt="..."
         style={{ height: imgHeight }}
       />
+
       <div className="card-body">
         <div>
           <h5 className="card-title">{title.slice(0, 50)}</h5>
@@ -27,13 +34,13 @@ const NewsItem = ({ title = '', description = '', src = image, url = '#', catego
           <a href={url} target="_blank" rel="noopener noreferrer" className="btn btn-dark">Read More</a>
           <div className="btn-group">
             <button className="btn btn-outline-dark">
-              <FontAwesomeIcon icon={faShare} />
+              <MyComponent icon={faShare} />
             </button>
             <button className="btn btn-outline-dark">
-              <FontAwesomeIcon icon={faBookmark} />
+              <MyComponent icon={faBookmark} />
             </button>
             <button className="btn btn-outline-dark">
-              <FontAwesomeIcon icon={faHeart} />
+              <MyComponent icon={faHeart} />
             </button>
           </div>
         </div>

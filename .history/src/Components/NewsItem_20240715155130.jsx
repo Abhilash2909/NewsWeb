@@ -2,7 +2,7 @@ import image from '../assets/image.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare, faBookmark, faHeart } from '@fortawesome/free-solid-svg-icons';
 
-const NewsItem = ({ title = '', description = '', src = image, url = '#', category = '' }) => {
+const NewsItem = ({ title, description, src, url, category }) => {
   const imgHeight = "200px";
 
   return (
