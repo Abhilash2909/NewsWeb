@@ -7,17 +7,8 @@ import { faShare, faBookmark, faHeart } from '@fortawesome/free-solid-svg-icons'
 const NewsItem = ({ title, description, src, url, category }) => {
   const imgHeight = "200px";
 
-  // Function to truncate text to a specified number of lines
-  const truncateText = (text, maxLines) => {
-    const lines = text.split('\n');
-    if (lines.length > maxLines) {
-      return lines.slice(0, maxLines).join('\n') + '...';
-    }
-    return text;
-  };
-
   return (
-    <div className="card news-card mb-3 mx-3 px-2 position-relative">
+    <div className="card news-card mb-3 mx-3 px-2">
       <span className="badge-category">{category}</span>
       <div className="news-card-inner">
         <img
@@ -28,16 +19,15 @@ const NewsItem = ({ title, description, src, url, category }) => {
         />
         <div className="card-overlay"></div>
         <div className="card-body">
-          <h5 className="card-title">{truncateText(title, 3)}</h5>
+          <h5 className="card-title">{title}</h5>
           <p className="card-text">
-            {truncateText(description
-              ? description
-              : "Stay informed with the latest news updates from around the world. Get insights on the most pressing issues and trending topics.", 3)}
+            {description
+              ? description.slice(0, 90)
+              : "Stay informed with the latest news updates from around the world. Get insights on the most pressing issues and trending topics."}
           </p>
         </div>
-        {/* <br /><br /><br /> */}
-        <div className="card-footer mr-2">
-          <a href={url} target="_blank" rel="noopener noreferrer" className="btn btn-dark align-self-start">Read More</a>
+        <div className="card-footer">
+          <a href={url} target="_blank" rel="noopener noreferrer" className="btn btn-dark">Read More</a>
           <div className="btn-group">
             <button className="btn btn-outline-dark">
               <FontAwesomeIcon icon={faShare} />

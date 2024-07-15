@@ -1,3 +1,5 @@
+/* app.css */
+
 .news-card {
   max-width: 345px;
   overflow: hidden;
@@ -44,33 +46,15 @@
 .news-card .card-title {
   margin-bottom: 10px;
   font-size: 1.25rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit to three lines */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .news-card .card-text {
   margin-bottom: 10px;
   color: #eee; /* Text color on overlay */
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit to three lines */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.news-card .card-footer {
-  position: absolute;
-  /* bottom: 10px; */
-  left: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .news-card .btn-group {
-  display: flex;
-  align-items: center;
+  margin-top: 10px;
 }
 
 .news-card .btn {
@@ -81,8 +65,4 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white for category badge */
-  color: #000; /* Text color for badge */
-  padding: 5px;
-  border-radius: 3px;
-}
+  background-color: rgba(255, 255, 

@@ -11,12 +11,19 @@ const NewsBoard = ({ category }) => {
       setLoading(true);
       setError(null);
 
+      const cachedArticles = localStorage.getItem(`articles-${category}`);
+      if (cachedArticles) {
+        setArticles(JSON.parse(cachedArticles));
+        setLoading(false);
+        return;
+      }
+
       try {
         let url;
         if (category === "trending") {
-          url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`;
+          url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${import.meta.env.NEWS_API_KEY}`;
         } else {
-          url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`;
+          url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${import.meta.env.NEWS_API_KEY}`;
         }
         const response = await fetch(url);
         if (!response.ok) {

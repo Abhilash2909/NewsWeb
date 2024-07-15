@@ -11,6 +11,13 @@ const NewsBoard = ({ category }) => {
       setLoading(true);
       setError(null);
 
+      const cachedArticles = localStorage.getItem(`articles-${category}`);
+      if (cachedArticles) {
+        setArticles(JSON.parse(cachedArticles));
+        setLoading(false);
+        return;
+      }
+
       try {
         let url;
         if (category === "trending") {
@@ -26,7 +33,6 @@ const NewsBoard = ({ category }) => {
         setArticles(data.articles);
 
         localStorage.setItem(`articles-${category}`, JSON.stringify(data.articles));
-        
       } catch (error) {
         if (error.message === 'Network response was not ok') {
           setError('Failed to fetch news articles. Please check your internet connection and try again later.');

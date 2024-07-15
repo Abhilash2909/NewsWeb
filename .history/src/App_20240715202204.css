@@ -1,3 +1,5 @@
+/* app.css */
+
 .news-card {
   max-width: 345px;
   overflow: hidden;
@@ -6,6 +8,8 @@
   border-radius: 15px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   position: relative;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(''); /* Adjust gradient colors and direction */
+  background-size: cover; /* Ensure background covers entire card */
 }
 
 .news-card:hover {
@@ -14,6 +18,9 @@
 
 .news-card .news-card-inner {
   position: relative;
+  background-color: #fff; /* White background for left and right sides */
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .news-card .card-img-top {
@@ -30,8 +37,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  border-radius: 15px;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)); /* Semi-transparent gradient overlay */
 }
 
 .news-card .card-body {
@@ -44,33 +50,15 @@
 .news-card .card-title {
   margin-bottom: 10px;
   font-size: 1.25rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit to three lines */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .news-card .card-text {
   margin-bottom: 10px;
   color: #eee; /* Text color on overlay */
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit to three lines */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.news-card .card-footer {
-  position: absolute;
-  /* bottom: 10px; */
-  left: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .news-card .btn-group {
-  display: flex;
-  align-items: center;
+  margin-top: 10px;
 }
 
 .news-card .btn {

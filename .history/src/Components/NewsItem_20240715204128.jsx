@@ -36,7 +36,7 @@ const NewsItem = ({ title, description, src, url, category }) => {
           </p>
         </div>
         {/* <br /><br /><br /> */}
-        <div className="card-footer mr-2">
+        <div className="card-footer mr-2px">
           <a href={url} target="_blank" rel="noopener noreferrer" className="btn btn-dark align-self-start">Read More</a>
           <div className="btn-group">
             <button className="btn btn-outline-dark">

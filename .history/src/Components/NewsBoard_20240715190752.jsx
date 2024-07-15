@@ -11,6 +11,13 @@ const NewsBoard = ({ category }) => {
       setLoading(true);
       setError(null);
 
+      const cachedArticles = localStorage.getItem(`articles-${category}`);
+      if (cachedArticles) {
+        setArticles(JSON.parse(cachedArticles));
+        setLoading(false);
+        return;
+      }
+
       try {
         let url;
         if (category === "trending") {

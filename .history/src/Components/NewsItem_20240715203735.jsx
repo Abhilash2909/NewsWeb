@@ -35,10 +35,9 @@ const NewsItem = ({ title, description, src, url, category }) => {
               : "Stay informed with the latest news updates from around the world. Get insights on the most pressing issues and trending topics.", 3)}
           </p>
         </div>
-        {/* <br /><br /><br /> */}
-        <div className="card-footer mr-2">
+        <div className="card-footer">
           <a href={url} target="_blank" rel="noopener noreferrer" className="btn btn-dark align-self-start">Read More</a>
-          <div className="btn-group">
+          <div className="btn-group align-self-end">
             <button className="btn btn-outline-dark">
               <FontAwesomeIcon icon={faShare} />
             </button>

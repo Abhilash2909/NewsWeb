@@ -1,3 +1,5 @@
+/* app.css */
+
 .news-card {
   max-width: 345px;
   overflow: hidden;
@@ -61,7 +63,7 @@
 
 .news-card .card-footer {
   position: absolute;
-  /* bottom: 10px; */
+  bottom: -100px;
   left: 10px;
   right: 10px;
   display: flex;

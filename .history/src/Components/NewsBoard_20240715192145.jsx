@@ -38,8 +38,9 @@ const NewsBoard = ({ category }) => {
       }
     };
 
+    // Always fetch new articles when category changes
     fetchArticles();
-  }, [category]);
+  }, [category]); // Dependency on category ensures useEffect runs when category changes
 
   if (loading) {
     return <div className="text-center">Loading...</div>;

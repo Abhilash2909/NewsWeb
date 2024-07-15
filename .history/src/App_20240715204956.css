@@ -1,3 +1,5 @@
+/* app.css */
+
 .news-card {
   max-width: 345px;
   overflow: hidden;
@@ -38,7 +40,7 @@
   position: relative; /* Ensure content stays above overlay */
   padding: 10px;
   color: #fff; /* Text color on overlay */
-  z-index: 1; /* Ensure content is above overlay */
+  z-index: 2; /* Ensure content is above overlay */
 }
 
 .news-card .card-title {

@@ -17,7 +17,7 @@ const NewsItem = ({ title, description, src, url, category }) => {
   };
 
   return (
-    <div className="card news-card mb-3 mx-3 px-2 position-relative">
+    <div className="card news-card mb-3 mx-3 px-2">
       <span className="badge-category">{category}</span>
       <div className="news-card-inner">
         <img
@@ -35,9 +35,8 @@ const NewsItem = ({ title, description, src, url, category }) => {
               : "Stay informed with the latest news updates from around the world. Get insights on the most pressing issues and trending topics.", 3)}
           </p>
         </div>
-        {/* <br /><br /><br /> */}
-        <div className="card-footer mr-2">
-          <a href={url} target="_blank" rel="noopener noreferrer" className="btn btn-dark align-self-start">Read More</a>
+        <div className="card-footer">
+          <a href={url} target="_blank" rel="noopener noreferrer" className="btn btn-dark">Read More</a>
           <div className="btn-group">
             <button className="btn btn-outline-dark">
               <FontAwesomeIcon icon={faShare} />

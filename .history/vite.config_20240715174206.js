@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/NewsWeb/',
+  base: '/NewsWeb/', // Ensure this line is included
 });
