@@ -30,22 +30,22 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
   border-radius: 15px;
 }
 
 .news-card .card-body {
-  position: relative; 
+  position: relative; /* Ensure content stays above overlay */
   padding: 10px;
-  color: #fff; 
-  z-index: 1; 
+  color: #fff; /* Text color on overlay */
+  z-index: 1; /* Ensure content is above overlay */
 }
 
 .news-card .card-title {
   margin-bottom: 10px;
   font-size: 1.25rem;
   display: -webkit-box;
-  -webkit-line-clamp: 3; 
+  -webkit-line-clamp: 3; /* Limit to three lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -61,6 +61,7 @@
 
 .news-card .card-footer {
   position: absolute;
+  /* bottom: 10px; */
   left: 10px;
   right: 10px;
   display: flex;
@@ -80,8 +81,8 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: rgba(255, 255, 255, 0.7); 
-  color: #000; 
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white for category badge */
+  color: #000; /* Text color for badge */
   padding: 5px;
   border-radius: 3px;
 }
