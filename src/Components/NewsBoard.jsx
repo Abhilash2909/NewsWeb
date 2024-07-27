@@ -6,10 +6,23 @@ const NewsBoard = ({ category }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  useEffect(() =>
+ {
     const fetchArticles = async () => {
       setLoading(true);
       setError(null);
+
+      // Check localStorage for cached articles
+      const cachedData = localStorage.getItem(`articles-${category}`);
+      if (cachedData) {
+        const { articles: cachedArticles, timestamp } = JSON.parse(cachedData);
+        const expirationTime = new Date(timestamp + 60 * 60 * 1000); // 1 hour expiration
+
+        if (new Date() < expirationTime) {
+          setArticles(cachedArticles); // Display cached articles immediately
+
+        }
+      }
 
       try {
         let url;
@@ -25,8 +38,12 @@ const NewsBoard = ({ category }) => {
         const data = await response.json();
         setArticles(data.articles);
 
-        localStorage.setItem(`articles-${category}`, JSON.stringify(data.articles));
-        
+        // Cache the fetched articles with timestamp
+        localStorage.setItem(`articles-${category}`, JSON.stringify({
+          articles: data.articles,
+          timestamp: Date.now()
+        }));
+
       } catch (error) {
         if (error.message === 'Network response was not ok') {
           setError('Failed to fetch news articles. Please check your internet connection and try again later.');
@@ -68,6 +85,6 @@ const NewsBoard = ({ category }) => {
       </div>
     </div>
   );
-}
+};
 
 export default NewsBoard;
