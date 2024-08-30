@@ -83,10 +83,6 @@ html, #root
     color: #ffffff;
   }
   
-  .navbar-dark-mode .navbar-brand {
-    color: #ffffff;
-  }
-  
   .navbar-dark-mode .nav-link,
   .navbar-dark-mode .dropdown-item {
     color: #ffffff;
@@ -96,4 +92,3 @@ html, #root
     background-color: #ffffff;
     color: #343a40;
   }
-  

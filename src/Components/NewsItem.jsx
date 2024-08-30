@@ -1,9 +1,17 @@
-import image from '../assets/image.jpg';
+import img1 from '../assets/image1.jpg';
+import img2 from '../assets/image2.jpg';
+import img3 from '../assets/image3.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare, faBookmark, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const NewsItem = ({ title, description, src, url, category }) => {
   const imgHeight = "200px";
+  
+  const getRandomImage = () => {
+    const images = [img1, img2, img3];
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return images[randomIndex];
+  };
 
   const truncateText = (text, maxLines) => {
     const lines = text.split('\n');
@@ -18,7 +26,7 @@ const NewsItem = ({ title, description, src, url, category }) => {
       <span className="badge-category">{category}</span>
       <div className="news-card-inner">
         <img
-          src={src ? src : image}
+          src={src ? src : getRandomImage()}
           className="card-img-top"
           alt="..."
           style={{ height: imgHeight }}

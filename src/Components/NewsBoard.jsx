@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 
-const NewsBoard = ({ category }) => {
+const NewsBoard = ({ category, searchQuery }) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() =>
- {
+  useEffect(() => {
     const fetchArticles = async () => {
       setLoading(true);
       setError(null);
@@ -16,11 +15,10 @@ const NewsBoard = ({ category }) => {
       const cachedData = localStorage.getItem(`articles-${category}`);
       if (cachedData) {
         const { articles: cachedArticles, timestamp } = JSON.parse(cachedData);
-        const expirationTime = new Date(timestamp + 60 * 60 * 1000); // 1 hour expiration
+        const expirationTime = new Date(timestamp + 60 * 60 * 1000);
 
         if (new Date() < expirationTime) {
-          setArticles(cachedArticles); // Display cached articles immediately
-
+          setArticles(cachedArticles);
         }
       }
 
@@ -58,6 +56,13 @@ const NewsBoard = ({ category }) => {
     fetchArticles();
   }, [category]);
 
+  const filteredArticles = searchQuery
+    ? articles.filter(article =>
+        article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        article.description.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : articles;
+
   if (loading) {
     return <div className="text-center">Loading...</div>;
   }
@@ -72,7 +77,7 @@ const NewsBoard = ({ category }) => {
         Latest <span className="badge bg-danger">{category === "trending" ? "Trending" : category.charAt(0).toUpperCase() + category.slice(1)}</span> News
       </h2>
       <div className="news-grid">
-        {articles.map((news, index) => (
+        {filteredArticles.map((news, index) => (
           <NewsItem
             key={index}
             title={news.title}

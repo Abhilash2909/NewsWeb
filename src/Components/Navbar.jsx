@@ -1,10 +1,16 @@
 import { useState } from 'react';
 
-const Navbar = ({ setCategory }) => {
+const Navbar = ({ setCategory, searchArticles }) => {
   const [darkMode, setDarkMode] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    searchArticles(searchQuery);
+  };
 
   const handleDarkModeToggle = () => {
-    setDarkMode((prevMode) => !prevMode);
+    setDarkMode(prevMode => !prevMode);
     document.body.classList.toggle('dark-mode', !darkMode);
   };
 
@@ -45,13 +51,25 @@ const Navbar = ({ setCategory }) => {
             <li className="nav-item">
               <a className="nav-link" href="#">Bookmarks</a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Liked Articles</a>
+            </li>
           </ul>
-          <form className="d-flex ms-auto">
+          <form className="d-flex ms-auto" onSubmit={handleSearch}>
+            <input 
+              className="form-control me-2" 
+              type="search" 
+              placeholder="Search news" 
+              aria-label="Search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button className="btn btn-outline-success" type="submit">Search</button>
             <button className="btn btn-dark ms-2" type="button" onClick={handleDarkModeToggle}>
               {darkMode ? 'Light Mode' : 'Dark Mode'}
             </button>
-            <a className="btn btn-secondary ms-2" href="#">Contact</a>
-            <a className="btn btn-secondary ms-2" href="#">About</a>
+            <a className="btn btn-secondary ms-2" href="/contact">Contact</a>
+            <a className="btn btn-secondary ms-2" href="/about">About</a>
           </form>
         </div>
       </div>
